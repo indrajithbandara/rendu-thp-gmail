@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'nokogiri' 
 require 'open-uri'
 require "google_drive"
 require 'gmail'
