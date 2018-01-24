@@ -29,13 +29,10 @@ def get_all_the_urls_of_val_doise_townhalls
 
   session = GoogleDrive::Session.from_config("config,json")
 
-  worksheet = session.spreadsheet_by_key("1uGaDLBLGFZxqx72bUalxkfnTR7B0AD2SWTWAaDPkLKg").worksheets[0]
-
-  worksheet[1, 1] = "Mairie"
-  worksheet[1, 2] = "Email"    
+  worksheet = session.spreadsheet_by_key("1uGaDLBLGFZxqx72bUalxkfnTR7B0AD2SWTWAaDPkLKg").worksheets[0] 
   
   TABLE.each do |col|
-    worksheet.insert_rows(2, [col.values])
+    worksheet.insert_rows(1, [col.values])
   end
 
   worksheet.save
